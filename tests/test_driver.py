@@ -23,9 +23,9 @@ class ManticoreDriver(unittest.TestCase):
 
 
     def testCreating(self):
-        m = Manticore('/bin/ls')
+        m = Manticore('tests/binaries/basic_linux_amd64')
         m.log_file = '/dev/null'
-        
+
     def test_issymbolic(self):
         v = BitVecVariable(32, 'sym')
         self.assertTrue(issymbolic(v))

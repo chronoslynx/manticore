@@ -8,6 +8,7 @@ class LinuxTest(unittest.TestCase):
     TODO(mark): these tests assumes /bin/ls is a dynamic x64 binary
     '''
     BIN_PATH = '/bin/ls'
+    BIN_PATH = 'tests/binaries/basic_linux_amd64'
 
     def setUp(self):
         self.linux = linux.Linux(self.BIN_PATH)
@@ -54,6 +55,5 @@ class LinuxTest(unittest.TestCase):
         first_map, second_map = mappings[:2]
         first_map_name = first_map[4]
         second_map_name = second_map[4]
-        self.assertEqual(first_map_name, '/bin/ls')
-        self.assertEqual(second_map_name, '/bin/ls')
-
+        self.assertEqual(first_map_name, self.BIN_PATH)
+        self.assertEqual(second_map_name, self.BIN_PATH)
