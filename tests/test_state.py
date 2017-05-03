@@ -37,7 +37,7 @@ class FakeModel(object):
 
 class StateTest(unittest.TestCase):
     def setUp(self):
-        l = linux.Linux('/bin/ls')
+        l = linux.Linux('tests/binaries/basic_linux_amd64')
         self.state = State(ConstraintSet(), l)
 
     def test_solve_one(self):

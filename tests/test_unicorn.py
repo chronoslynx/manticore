@@ -1317,7 +1317,7 @@ class UnicornConcretization(unittest.TestCase):
     def get_state(cls):
         if cls.cpu is None:
             constraints = ConstraintSet()
-            model = linux.SLinux(constraints, '/bin/ls', argv=[], envp=[])
+            model = linux.SLinux(constraints, 'tests/binaries/basic_linux_amd64', argv=[], envp=[])
             cls.state = State(constraints, model)
             cls.cpu = model._mk_proc('armv7')
         return (cls.cpu, cls.state)
